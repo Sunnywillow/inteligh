@@ -1,0 +1,1794 @@
+<html data-blockbyte-bs-uid="93640">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <link rel="stylesheet" href="/static/bageMap/css/bagemap.css">
+    <link rel="stylesheet" href="/static/bageMap/js/Bigemap.draw.css">
+    <script type="text/javascript" src="/static/js/ezuikit.js"></script>
+    <link rel="stylesheet" href="/static/plugins/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" href="/static/plugins/kindeditor/themes/default/default.css">
+    <script type="text/javascript" src="./static/plugins/ztree/jquery.min.js"></script>
+    <script type="text/javascript" src="./static/plugins/ztree/jquery.ztree.all.min.js"></script>
+    <script type="text/javascript" src="./static/plugins/ztree/jquery.ztree.exhide.min.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/4.7.0/echarts.min.js"></script>
+    <title>工人管理</title>
+    <link rel="shortcut icon" href="/favicon.png">
+    <link href="/static/css/index.bc87bacc5be7a2e282520c0e38a993b2.css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" async="" src="/static/js/28.e83a9f40993153f5aeff.js"></script>
+    <style class="blockbyte-bs-style" data-name="content">
+        body>div#blockbyte-bs-indicator>div {
+            opacity: 0;
+            pointer-events: none
+        }
+
+        body>iframe#blockbyte-bs-sidebar.blockbyte-bs-visible,
+        body>iframe#blockbyte-bs-overlay.blockbyte-bs-visible {
+            opacity: 1;
+            pointer-events: auto
+        }
+
+        body.blockbyte-bs-noscroll {
+            overflow: hidden !important
+        }
+
+        body>div#blockbyte-bs-indicator>div {
+            position: absolute;
+            transform: translate3d(-24px, 0, 0);
+            top: 0;
+            left: 0;
+            width: 24px !important;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 0 10px 10px 0;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 2
+        }
+
+        body>div#blockbyte-bs-indicator>div>span {
+            -webkit-mask: no-repeat center/24px;
+            -webkit-mask-image: url(chrome-extension://jdbnofccmhefkmjbkkdkfiicjkgofkdh/img/icon-bookmark.svg);
+            background-color: #ffffff;
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        body>div#blockbyte-bs-indicator[data-pos='right'] {
+            left: auto;
+            right: 0
+        }
+
+        body>div#blockbyte-bs-indicator[data-pos='right']>div {
+            transform: translate3d(24px, 0, 0);
+            left: auto;
+            right: 0;
+            border-radius: 10px 0 0 10px
+        }
+
+        body>div#blockbyte-bs-indicator.blockbyte-bs-fullHeight>div {
+            border-radius: 0
+        }
+
+        body>div#blockbyte-bs-indicator.blockbyte-bs-hover>div {
+            transform: translate3d(0, 0, 0);
+            opacity: 1
+        }
+
+        body>div#blockbyte-bs-indicator[data-pos='left'].blockbyte-bs-has-lsb {
+            height: 100% !important;
+            top: 0 !important
+        }
+
+        body>div#blockbyte-bs-indicator[data-pos='left'].blockbyte-bs-has-lsb>div {
+            background: transparent
+        }
+
+        body>div#blockbyte-bs-indicator[data-pos='left'].blockbyte-bs-has-lsb>div>span {
+            -webkit-mask-position-y: 20px
+        }
+
+        body>iframe#blockbyte-bs-sidebar {
+            width: 350px;
+            max-width: none;
+            height: 0;
+            z-index: 2147483646;
+            background-color: rgba(255, 255, 255, 0.8) !important;
+            speak: none;
+            border: none;
+            display: block !important;
+            transform: translate3d(-350px, 0, 0);
+            transition: width 0s 0.3s, height 0s 0.3s, opacity 0.3s, transform 0.3s
+        }
+
+        body>iframe#blockbyte-bs-sidebar[data-pos='right'] {
+            left: auto;
+            right: 0;
+            transform: translate3d(350px, 0, 0)
+        }
+
+        body>iframe#blockbyte-bs-sidebar.blockbyte-bs-visible {
+            width: calc(100% + 350px);
+            height: 100%;
+            transform: translate3d(0, 0, 0);
+            transition: opacity 0.3s, transform 0.3s
+        }
+
+        body>iframe#blockbyte-bs-sidebar.blockbyte-bs-hideMask {
+            background: none !important
+        }
+
+        body>iframe#blockbyte-bs-sidebar.blockbyte-bs-hideMask:not(.blockbyte-bs-hover) {
+            width: calc(350px + 50px)
+        }
+
+        body>iframe#blockbyte-bs-overlay {
+            width: 100%;
+            max-width: none;
+            height: 100%;
+            z-index: 2147483647;
+            border: none;
+            speak: none;
+            background: rgba(0, 0, 0, 0.5) !important;
+            transition: opacity 0.3s
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8" async="" src="/static/js/86.da74da3a2e9344ad9871.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="/static/js/35.5cd4c3ed3ee4a3f727d2.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="/static/js/27.967dc65860876c46a926.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="/static/js/54.c2a0e856b4aeea86c9d7.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="/static/js/95.a3d7249048848f643e37.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="/static/js/65.664e0ac1ad4527aa07cd.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div id="main">
+            <div class="main-left" style="width: 220px; overflow: auto;">
+                <div>
+                    <div class="ivu-shrinkable-menu" style="background: rgb(255, 255, 255);">
+                        <div class="top">
+                            <div class="system_name"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOUAAAAfCAYAAAAYwAppAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDplYmVkNjllNy1lMWNhLTM5NDItOGRiZi0yNzQ2NDNkMzE4ZDYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDcxMDY1RUY4RUVEMTFFOEI4QjhCMEY0ODVDQjQ0QjEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDcxMDY1RUU4RUVEMTFFOEI4QjhCMEY0ODVDQjQ0QjEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MGY5MjQ4M2EtZWQ3NS02YTRiLTkxM2UtODI4YWIxOTY1NTQ1IiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6NTJhZDk4ZGYtN2E4MS05ZTQ4LWFhNGIt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">
+                            </div>
+                            <div class="border"></div>
+                        </div>
+                        <ul class="ivu-shrinkable-menu ivu-menu ivu-menu-light ivu-menu-vertical" active-key="1-2"
+                            open-keys="1" style="width: auto;">
+                            <li class="ivu-menu-submenu ivu-menu-opened">
+                                <div class="ivu-menu-submenu-title"><img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDplYmVkNjllNy1lMWNhLTM5NDItOGRiZi0yNzQ2NDNkMzE4ZDYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MEI3MUREMjI4RUYxMTFFOEEzRkNGRjg2NjRDQTcyRDYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MEI3MUREMjE4RUYxMTFFOEEzRkNGRjg2NjRDQTcyRDYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODMwZGZmYWItMjU5Ni05NjRhLTk3N2YtNDk3MDQxYWFhODQ3IiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6MzYxYTcxOGItNmFhZi0yYTQ3LWI0ZDAtOTgxZTI4ZTM5NDJkIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ViY5AgAAAvxJREFUeNrclklIV1EUh7U0TGmggYwGBYmIFIOiWmWzBSXRplWQYRAFUbqKQoIoyubERghrVZIJiZUFldaiRRBkSkbDxpLCJi2yTP99J34vbrf3F0Nz0YGP+959757zznDPfbGRSCSmP2VATD9L3KXq2l4pWJk95+eInvkMRyENcpi/ofmBXHf+Cw/XwFRIgCoMVUM91y8ZM3552FsrKBvOsAxWOdPxsNi5Pw2z+8LgPLjp3L+BI/AJ1kG65mv7ysMc59rKfSH5qpPnpQzPYJTCHDWHs+AyXIFkZ34wnIHbsEJzVdCq61eBMRVTq941Wc8H5IYZ3AX3YDkshccycgwawRZlQYU+ysJZoLXjUDrZyW1ikDflNC8spKu9+2EyEib2UVYw75256xjax9gGG2C88+xqmMEXMKGH+fsI7+RxIBOh2HvPiugEPPENDoIpIYq7oFNh8b1PgT1WLDAWHsJMp0iewhbyGfGLxpSVwGhH4WvtrUQpsE5S5xk9C58hE8ag2LydJu8/2P5zjQUG81W+ec58ByyAMvgqL2/BXGhy3stSGg7Ad1Vno6p7BNdFfrhiy6/VdIZUa5nXOVzZCrtD5tMxUN+T0yJsLz7vZk20Z/E9Oi2g3e0Eksxu1kR79kX7z8I8A07hcVtYSK3xblbOXFkC1d7cJLgPQ505K6QSlJ/EmFV5g+bvmFEZr+B5TWAwWGgdY7+j6BvshXIVziIoVG8M5BystfMOYwnqSLlRvE/jvWbXYKwqLqWHG79LW6EFYxahg9LRIcNv1W2S1SCSebcjzuv2TX9h0L66xTk1YoNIobhY+axkeKCCSrK96Vdo6l8cTUlOeAvVP2PU5AMJ8jkE7oadFtudhSaPlNuN3kFre7co8BCPTFmlnuXbX4D9y3C902uFfzTvUlXmJoVoh7aNyXFVc5py1OCtna4xW22xXdXcpeK6EO3Eb1Y38cVyfKibEF+EbTI20tk6h4lAQZ//taHU0pHKaFWZoSq1Hn3+t43/3/95/xBgAN/05RXC/MXXAAAAAElFTkSuQmCC"
+                                        class="icon">
+                                    系统管理
+                                    <i class="ivu-icon ivu-icon-ios-arrow-down ivu-menu-submenu-title-icon"></i></div>
+                                <ul class="ivu-menu" style="" data-old-padding-top="" data-old-padding-bottom=""
+                                    data-old-overflow="">
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 组织机构
+                                    </li>
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> IGH设备
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="ivu-menu-submenu">
+                                <div class="ivu-menu-submenu-title"><img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAUNJREFUOI2t0z1SwlAUhuH33DBjKUvQFcgGRNLopDOD1uAK1B2wBF2BWCuDHXQJugGWgDuAUgfvZ6difkc85b05z3w5OTFKajR9vhK+Z1gLtBSkgXQdR+GiqMcKscksxTjK3mgpcxdnJ+2nvD5XgA3yMQBrmvzdOEmatUGZrvKxb9S/Bf1a4MPkpWPYbjkISKe1wEawXlZigIzc5zJgfBzOhVZVoGFpLRDAZDel6dDK7XwMa4Pd6GggcV+EBU6dOAxzX7lwDwFG03QOdrABmsVFO1iY8Ed3JoV89iyTcJwkTf/uLiV1fl22wDYWWGgOG194KQW359Fh+gU+TmZDM3qlaSvKye/HUbhwANtiAB7Xh6oZ/qH+HWwAeLlwe2i9gJw9HE+SPe9c9Uy9vXajduZvafw+WNPYc/KD6kyaARnw32f4Cf3YdaVBgCXaAAAAAElFTkSuQmCC"
+                                        class="icon">
+                                    审核管理
+                                    <i class="ivu-icon ivu-icon-ios-arrow-down ivu-menu-submenu-title-icon"></i></div>
+                                <ul class="ivu-menu" style="display: none;">
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 我发起的
+                                    </li>
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 流程列表
+                                    </li>
+                                </ul>
+                            </li>
+                            <li
+                                class="ivu-menu-submenu ivu-menu-item-active ivu-menu-opened ivu-menu-child-item-active">
+                                <div class="ivu-menu-submenu-title"><img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDplYmVkNjllNy1lMWNhLTM5NDItOGRiZi0yNzQ2NDNkMzE4ZDYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTU5QTQyRDI4RUYxMTFFODg3MzE5QUQ1MzAzNjJBRjIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTU5QTQyRDE4RUYxMTFFODg3MzE5QUQ1MzAzNjJBRjIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODMwZGZmYWItMjU5Ni05NjRhLTk3N2YtNDk3MDQxYWFhODQ3IiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6MzYxYTcxOGItNmFhZi0yYTQ3LWI0ZDAtOTgxZTI4ZTM5NDJkIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+R/4BJgAAATVJREFUeNpi/P//PwM9ARMDnQELMmfdzkPkmhMNxPOAuCfI3a4an0JGWJACLZMFUsp41P4F4rNA/A2LZYuQQqsTaGkFMRZ+BFJ8BHwyE4gzkPjpQDwNS9TgtBRZIR8RQSeBxM4E4hk40kE50AMd1Ew0mVCf4QNYLSXHwhQiLEO2tJVSC3NJVF9CqYUFQPydSLX/gDiJUgv3A7EPEZaCLIsDptal1Eg0+whYitUydAv/EmHRdyIsxWkZetHmB8RqBCzciMOnW4CYk5BlKCUNhWWpExBPBOI2oGXLiS1La4GUMR61f4B4ChAfAGJFkOFQX+ECL4C4COiAb7iCtIlI34As9AfiCCLUgoL2MCWplIVE9cwDXgGPWjhqIUUWXidC/VkofYuIsvcTEN/FW7SNxiE1AECAAQA51WNM9CguHwAAAABJRU5ErkJggg=="
+                                        class="icon">
+                                    项目管理
+                                    <i class="ivu-icon ivu-icon-ios-arrow-down ivu-menu-submenu-title-icon"></i></div>
+                                <ul class="ivu-menu" style="" data-old-padding-top="" data-old-padding-bottom=""
+                                    data-old-overflow="">
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 项目列表
+                                    </li>
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 紧急联系人
+                                    </li>
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 班组管理
+                                    </li>
+                                    <li class="ivu-menu-item ivu-menu-item-active ivu-menu-item-selected"
+                                        style="padding-left: 43px;"><span class="diandiandian"></span> 工人管理
+                                    </li>
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 考勤管理
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="ivu-menu-submenu">
+                                <div class="ivu-menu-submenu-title"><img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABcRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bXBSaWdodHM6TWFya2VkPSJUcnVlIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6YzVlZWUzZWMtOWQ1Yi00YWQ0LThiMDktZjUzY2YyZDI5YThmIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhFRTI4QzE3NDBCQzExRTk4NzYxRjQzNDdDRDQ3Q0QzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhFRTI4QzE2NDBCQzExRTk4NzYxRjQzNDdDRDQ3Q0QzIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE3IChNYWNpbnRvc2gpIiBwaG90b3Nob3A6QXV0aG9yc1Bvc2l0aW9uPSLnibnpgoDorr7orqHluIgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozZjdmYjhiOC04YjIyLTkyNDctYmUzNC0wMzVkYzAwOGI3NDYiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo5ZGI5NWQxYy0wMjIwLTExN2MtOWIzZC05ZTcwOTA5OTdkNDUiLz4gPGRjOnJpZ2h0cz4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+5qih5p2/5YaF5a655LuF5L6b5Y+C6ICD77yM5Y2D5Zu+572R5piv5q2j54mI5ZWG5Lia5Zu+5bqT77yM5omA5pyJ5Y6f5Yib5L2c5ZOB77yI5ZCr6aKE6KeI5Zu+77yJ5Z2H5Y+X6JGX5L2c5p2D5rOV5L+d5oqk44CC6JGX5L2c5p2D5Y+K55u45YWz5p2D5Yip5b2S5pys572R56uZ5omA5pyJ77yM55uX5Zu+5b+F56m244CCPC9yZGY6bGk+IDwvcmRmOkFsdD4gPC9kYzpyaWdodHM+IDxkYzpjcmVhdG9yPiA8cmRmOlNlcT4gPHJkZjpsaT7ljYPlm77nvZHljp/liJvkvZzlk4E8L3JkZjpsaT4gPC9yZGY6U2VxPiA8L2RjOmNyZWF0b3I+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Wg8TGwAAAaNJREFUeNqkk08oRFEUxu8wLOzUTLKasZBSmGajRslqRJJ/WShKyI6NWcpaSQpLGwsWUqgpY0OzoETZ+L+ikJAsbEjjd+tMvXnd+6ZpTv06t/fmffOd877ny2QyylTbqXQDLQFxqIIfOIPV/vbWDWUpn0kQsWFaLcwanknBJuwg/OW+WWIQG6etw6vFxAkswlJeh4iV0p5kxCsICs46gjY5h3H54OWwWcR01RvElENMyX7NI+OumjapCqsengvbHGp3IwUKdrocK7/jfAA1MAZd0OshNANNoNPw7hkbRtB72YIAC/+1ZHSXdsf9RN7YUGn4g0GLWIjWoY+FBHtKQh3Dxb3jeoUE+5Pr3SZBv2VHy1AH54joAJ/qzME0fMCobbk2wUpYgH2YgAF4gxVIWlaVOzJOYrI3HYNG0C8kAuXiSAtdwy3o0W9k30nG38sRRCwiY5W5/lB/s5ewJudnce4s7SiK6IXzLc8ZxJQE/VjOhzBkmlLWkhObFstKAjAvZz121PK7uFsw6PFVZOPR5/GbkFvwWxVXfrfgY5GCL9nDvwADAG6mfTLY8lnLAAAAAElFTkSuQmCC"
+                                        class="icon">
+                                    智能安全帽
+                                    <i class="ivu-icon ivu-icon-ios-arrow-down ivu-menu-submenu-title-icon"></i></div>
+                                <ul class="ivu-menu" style="display: none;">
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 待处理告警
+                                    </li>
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 已处理告警
+                                    </li>
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 告警触发排名
+                                    </li>
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 语音通知
+                                    </li>
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 安全帽大数据
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="ivu-menu-submenu">
+                                <div class="ivu-menu-submenu-title"><img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAahJREFUOI29lE1S20AQhd+b4WdJbkBuEHIBPLMRsIpVeB9zA+cEyQ0SToD3oCp7hc0GKVxAOUHMDewtVZqXBcg/MpJxUZVezfR0f/NU81rAG+JmnPWTcaZknH3fVMumw+vbB0dT/CR4VOYkpVa6iM/8pBF4ffvgjAmtl+0HQW4ZVA1JKckcwBQADMMwjny+MyebYgDwYHFTo3iQdABcuQ8yHoAzS4CD1xq3DbO55D8ABc0Mw2eQF+8GCppZysWRzxXUfhtQepRwKWhWB7sZZ30SXxqA+rNoxN/OaatnKVdCSxh2MUlG6RWBr6saXuyzSHE6X5EuGaVXceRzSzkAmd3TR+xiUjzxHmS3qoxEXv3ktFLRLaHnJy0HAMUT7+vMLjAHgLmxDcMgyKzO6jMUZl/fmmAAYPeKFKjMcjJKJyAP65rqQsKwc9pqA9VXNubHtrBnoPlVrtcGdluVy+rWFQIwRu2q/2ph0Mzuh5UXXwPGkc9J09sEnZvc++ly/tVJOY+O+5ZykB5reJkNOoojn1cPmn96AJK7310o9AB+kjAE2e+cHA/q6v8B1yS6k4vpqBMAAAAASUVORK5CYII="
+                                        class="icon">
+                                    安全管理
+                                    <i class="ivu-icon ivu-icon-ios-arrow-down ivu-menu-submenu-title-icon"></i></div>
+                                <ul class="ivu-menu" style="display: none;">
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 隐患整改
+                                    </li>
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 安全周报
+                                    </li>
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 奖罚单
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="ivu-menu-submenu">
+                                <div class="ivu-menu-submenu-title"><img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAApRJREFUOI2NVEFy2kAQ7N6lSG7mB+EJ8gNipEuonAJlcg5+gfkB5AVJXpD4bFPyDePLgv0BPYH8AG5ExW7nICQLByeZk2pnptUz0zPEPyy9d5FgTwCA8Jv+uyT7WzxfckzvHkZAuATZPnBIK5GTQbdz9V+AqXMtn9MRjP7GRFBmm0r6SbKuv5t/gC1BXhiGU8NwCvICwLJgwsjndM9/dAAYcjMqwQRcnXc7MQJaXhx7caygk/NuJxZwVYJO58vJi4CCRiWzQbcznM4XGagvEAmRJL7e3C3coNsZlkwBXdYxqh5ezx5jY4IDAMNwGmR6AMYAlqYZevsKbgF0AHwWmBFKASAEk3x8/3ZxwNBQ1RD20ogF9s+7nXi3bUS7bSMqymUfQDzont1WuVaVEhpPXNU6bK9agMapcwufhyEApM5lPg9jPFdHQJVbMQzBLMrvdObaRUnFgGwzjAbdzhBbtAhGArP03lUVBbESe8Ww8XqXhbzAD8YMbTOMfM6e/2U+EYqmdwt4MAO0sU2N/C8zIZ9y/2DYT5J1KQcA4922EdmgCEAioi+iDyCxQZHPbUziEijkVRf3wZQb2K28YUbwZP88Mc3wrUxInWuF3FwCmBRg2tim2rttIyqnTACY3j8MIX0X2Lf0Ky8uaqAQlBXBT+soaGOp2Mu2CaUgL87fnf1gCbYPWxsqgcfa03wl8QFHTMCVDWECi1YQHcBiyuQFp/OljuRMTDN8wxatQNurJCWujfwtXmNdL71uvJk/9AD1KMUg3zzR0E/zStHza7I/IKt6SyD9FLkAeFsN5Wb+0CtXqezPS8c0vXdRvc9HV88Gn/0PGFCspqViQRsAaGC3Ohp4PXuM05lrH3UeYzpz7evZY1x/+w2RUVjAbI+9OgAAAABJRU5ErkJggg=="
+                                        class="icon">
+                                    质量管理
+                                    <i class="ivu-icon ivu-icon-ios-arrow-down ivu-menu-submenu-title-icon"></i></div>
+                                <ul class="ivu-menu" style="display: none;">
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 隐患整改
+                                    </li>
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 罚款单
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="ivu-menu-submenu">
+                                <div class="ivu-menu-submenu-title"><img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAABHNCSVQICAgIfAhkiAAAAhhJREFUOI2dlMFyEkEQhr8eMOYmbxDeAPIAybKXJHiCQqo84hMYnyDkpie5epLcrIrrxhMhVSlYfADjE0huHvGmVuj2ALtJqN0l+t96uuebnu6eEZYKzieHiD0hQwabAs+XZh/AjFnhsZ40fX8WxwlAcDHpYPY+C7ZGPRE5k0fzb03fnxUXx1v5P2EA22a2bX+kEg5G2w7AqfZVnQ9Eazb/APmwEjd2G9oAKakUGg6gWfen7frO2JBeHk3n8kZV3rX2vRomr+L1pIZipSLA6eBLzTn1MO0gkgozOGk/3c09EGBx5YKVAR+R1Foa9rOwoYexHY5GJUSP0mKLAK293T7Qz+q2ID1+WSkYRocA89+URChlAm9TSem22XXroNZdWt3wYlRV3Nc0WAIMhlEXSL2CWqFz33a5dSwCONEzNQdYA6Rymxyf2/WdcWyfnkevAW8tsLnnXwFXH4eTK8FCWDbCLGlEcHm5ZTf2cvm48oHx2BjaSDaY9Jv12jSJvCm+ENjMpRGPjdMa0BWkesdXDobREUA4GJXJqHEqsLXvdVv7ngDHsePZgddA5DoYRuO5k/AhsASYSGS6GmBmtpJ5rhZjs/gL32KWOIJhZJghGU8xP0Ox1Kl/iFTd+K5996UcrzrXqcjNtFX3pvfXlqc4N++J0+8upY5ZMgpbn84nFRXtwOJfTQoUXoyqaq7xLxnekmXmbH7WrPvTv8aU3v3FYLHRAAAAAElFTkSuQmCC"
+                                        class="icon">
+                                    施工日志
+                                    <i class="ivu-icon ivu-icon-ios-arrow-down ivu-menu-submenu-title-icon"></i></div>
+                                <ul class="ivu-menu" style="display: none;">
+                                    <li class="ivu-menu-item" style="padding-left: 43px;"><span
+                                            class="diandiandian"></span> 施工日志
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="ivu-sideMenuShrink-menu" style="display: none;">
+                            <div style="text-align: center;">
+                                <div class="ivu-dropdown" style="margin-left: 20px;">
+                                    <div class="ivu-dropdown-rel">
+                                        <div class="button"><img
+                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDplYmVkNjllNy1lMWNhLTM5NDItOGRiZi0yNzQ2NDNkMzE4ZDYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MEI3MUREMjI4RUYxMTFFOEEzRkNGRjg2NjRDQTcyRDYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MEI3MUREMjE4RUYxMTFFOEEzRkNGRjg2NjRDQTcyRDYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODMwZGZmYWItMjU5Ni05NjRhLTk3N2YtNDk3MDQxYWFhODQ3IiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6MzYxYTcxOGItNmFhZi0yYTQ3LWI0ZDAtOTgxZTI4ZTM5NDJkIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ViY5AgAAAvxJREFUeNrclklIV1EUh7U0TGmggYwGBYmIFIOiWmWzBSXRplWQYRAFUbqKQoIoyubERghrVZIJiZUFldaiRRBkSkbDxpLCJi2yTP99J34vbrf3F0Nz0YGP+959757zznDPfbGRSCSmP2VATD9L3KXq2l4pWJk95+eInvkMRyENcpi/ofmBXHf+Cw/XwFRIgCoMVUM91y8ZM3552FsrKBvOsAxWOdPxsNi5Pw2z+8LgPLjp3L+BI/AJ1kG65mv7ysMc59rKfSH5qpPnpQzPYJTCHDWHs+AyXIFkZ34wnIHbsEJzVdCq61eBMRVTq941Wc8H5IYZ3AX3YDkshccycgwawRZlQYU+ysJZoLXjUDrZyW1ikDflNC8spKu9+2EyEib2UVYw75256xjax9gGG2C88+xqmMEXMKGH+fsI7+RxIBOh2HvPiugEPPENDoIpIYq7oFNh8b1PgT1WLDAWHsJMp0iewhbyGfGLxpSVwGhH4WvtrUQpsE5S5xk9C58hE8ag2LydJu8/2P5zjQUG81W+ec58ByyAMvgqL2/BXGhy3stSGg7Ad1Vno6p7BNdFfrhiy6/VdIZUa5nXOVzZCrtD5tMxUN+T0yJsLz7vZk20Z/E9Oi2g3e0Eksxu1kR79kX7z8I8A07hcVtYSK3xblbOXFkC1d7cJLgPQ505K6QSlJ/EmFV5g+bvmFEZr+B5TWAwWGgdY7+j6BvshXIVziIoVG8M5BystfMOYwnqSLlRvE/jvWbXYKwqLqWHG79LW6EFYxahg9LRIcNv1W2S1SCSebcjzuv2TX9h0L66xTk1YoNIobhY+axkeKCCSrK96Vdo6l8cTUlOeAvVP2PU5AMJ8jkE7oadFtudhSaPlNuN3kFre7co8BCPTFmlnuXbX4D9y3C902uFfzTvUlXmJoVoh7aNyXFVc5py1OCtna4xW22xXdXcpeK6EO3Eb1Y38cVyfKibEF+EbTI20tk6h4lAQZ//taHU0pHKaFWZoSq1Hn3+t43/3/95/xBgAN/05RXC/MXXAAAAAElFTkSuQmCC"
+                                                class="menu-icon"></div>
+                                    </div>
+                                    <div class="ivu-select-dropdown" style="display: none;">
+                                        <ul class="ivu-dropdown-menu">
+                                            <li class="ivu-dropdown-item">组织机构</li>
+                                            <li class="ivu-dropdown-item">IGH设备</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div class="ivu-dropdown" style="margin-left: 20px;">
+                                    <div class="ivu-dropdown-rel">
+                                        <div class="button"><img
+                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAUNJREFUOI2t0z1SwlAUhuH33DBjKUvQFcgGRNLopDOD1uAK1B2wBF2BWCuDHXQJugGWgDuAUgfvZ6difkc85b05z3w5OTFKajR9vhK+Z1gLtBSkgXQdR+GiqMcKscksxTjK3mgpcxdnJ+2nvD5XgA3yMQBrmvzdOEmatUGZrvKxb9S/Bf1a4MPkpWPYbjkISKe1wEawXlZigIzc5zJgfBzOhVZVoGFpLRDAZDel6dDK7XwMa4Pd6GggcV+EBU6dOAxzX7lwDwFG03QOdrABmsVFO1iY8Ed3JoV89iyTcJwkTf/uLiV1fl22wDYWWGgOG194KQW359Fh+gU+TmZDM3qlaSvKye/HUbhwANtiAB7Xh6oZ/qH+HWwAeLlwe2i9gJw9HE+SPe9c9Uy9vXajduZvafw+WNPYc/KD6kyaARnw32f4Cf3YdaVBgCXaAAAAAElFTkSuQmCC"
+                                                class="menu-icon"></div>
+                                    </div>
+                                    <div class="ivu-select-dropdown" style="display: none;">
+                                        <ul class="ivu-dropdown-menu">
+                                            <li class="ivu-dropdown-item">我发起的</li>
+                                            <li class="ivu-dropdown-item">流程列表</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div class="ivu-dropdown" style="margin-left: 20px;">
+                                    <div class="ivu-dropdown-rel">
+                                        <div class="button"><img
+                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDplYmVkNjllNy1lMWNhLTM5NDItOGRiZi0yNzQ2NDNkMzE4ZDYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTU5QTQyRDI4RUYxMTFFODg3MzE5QUQ1MzAzNjJBRjIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTU5QTQyRDE4RUYxMTFFODg3MzE5QUQ1MzAzNjJBRjIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODMwZGZmYWItMjU5Ni05NjRhLTk3N2YtNDk3MDQxYWFhODQ3IiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6MzYxYTcxOGItNmFhZi0yYTQ3LWI0ZDAtOTgxZTI4ZTM5NDJkIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+R/4BJgAAATVJREFUeNpi/P//PwM9ARMDnQELMmfdzkPkmhMNxPOAuCfI3a4an0JGWJACLZMFUsp41P4F4rNA/A2LZYuQQqsTaGkFMRZ+BFJ8BHwyE4gzkPjpQDwNS9TgtBRZIR8RQSeBxM4E4hk40kE50AMd1Ew0mVCf4QNYLSXHwhQiLEO2tJVSC3NJVF9CqYUFQPydSLX/gDiJUgv3A7EPEZaCLIsDptal1Eg0+whYitUydAv/EmHRdyIsxWkZetHmB8RqBCzciMOnW4CYk5BlKCUNhWWpExBPBOI2oGXLiS1La4GUMR61f4B4ChAfAGJFkOFQX+ECL4C4COiAb7iCtIlI34As9AfiCCLUgoL2MCWplIVE9cwDXgGPWjhqIUUWXidC/VkofYuIsvcTEN/FW7SNxiE1AECAAQA51WNM9CguHwAAAABJRU5ErkJggg=="
+                                                class="menu-icon"></div>
+                                    </div>
+                                    <div class="ivu-select-dropdown" style="display: none;">
+                                        <ul class="ivu-dropdown-menu">
+                                            <li class="ivu-dropdown-item">项目列表</li>
+                                            <li class="ivu-dropdown-item">紧急联系人</li>
+                                            <li class="ivu-dropdown-item">班组管理</li>
+                                            <li class="ivu-dropdown-item">工人管理</li>
+                                            <li class="ivu-dropdown-item">考勤管理</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div class="ivu-dropdown" style="margin-left: 20px;">
+                                    <div class="ivu-dropdown-rel">
+                                        <div class="button"><img
+                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABcRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bXBSaWdodHM6TWFya2VkPSJUcnVlIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6YzVlZWUzZWMtOWQ1Yi00YWQ0LThiMDktZjUzY2YyZDI5YThmIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhFRTI4QzE3NDBCQzExRTk4NzYxRjQzNDdDRDQ3Q0QzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhFRTI4QzE2NDBCQzExRTk4NzYxRjQzNDdDRDQ3Q0QzIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE3IChNYWNpbnRvc2gpIiBwaG90b3Nob3A6QXV0aG9yc1Bvc2l0aW9uPSLnibnpgoDorr7orqHluIgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozZjdmYjhiOC04YjIyLTkyNDctYmUzNC0wMzVkYzAwOGI3NDYiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo5ZGI5NWQxYy0wMjIwLTExN2MtOWIzZC05ZTcwOTA5OTdkNDUiLz4gPGRjOnJpZ2h0cz4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+5qih5p2/5YaF5a655LuF5L6b5Y+C6ICD77yM5Y2D5Zu+572R5piv5q2j54mI5ZWG5Lia5Zu+5bqT77yM5omA5pyJ5Y6f5Yib5L2c5ZOB77yI5ZCr6aKE6KeI5Zu+77yJ5Z2H5Y+X6JGX5L2c5p2D5rOV5L+d5oqk44CC6JGX5L2c5p2D5Y+K55u45YWz5p2D5Yip5b2S5pys572R56uZ5omA5pyJ77yM55uX5Zu+5b+F56m244CCPC9yZGY6bGk+IDwvcmRmOkFsdD4gPC9kYzpyaWdodHM+IDxkYzpjcmVhdG9yPiA8cmRmOlNlcT4gPHJkZjpsaT7ljYPlm77nvZHljp/liJvkvZzlk4E8L3JkZjpsaT4gPC9yZGY6U2VxPiA8L2RjOmNyZWF0b3I+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Wg8TGwAAAaNJREFUeNqkk08oRFEUxu8wLOzUTLKasZBSmGajRslqRJJ/WShKyI6NWcpaSQpLGwsWUqgpY0OzoETZ+L+ikJAsbEjjd+tMvXnd+6ZpTv06t/fmffOd877ny2QyylTbqXQDLQFxqIIfOIPV/vbWDWUpn0kQsWFaLcwanknBJuwg/OW+WWIQG6etw6vFxAkswlJeh4iV0p5kxCsICs46gjY5h3H54OWwWcR01RvElENMyX7NI+OumjapCqsengvbHGp3IwUKdrocK7/jfAA1MAZd0OshNANNoNPw7hkbRtB72YIAC/+1ZHSXdsf9RN7YUGn4g0GLWIjWoY+FBHtKQh3Dxb3jeoUE+5Pr3SZBv2VHy1AH54joAJ/qzME0fMCobbk2wUpYgH2YgAF4gxVIWlaVOzJOYrI3HYNG0C8kAuXiSAtdwy3o0W9k30nG38sRRCwiY5W5/lB/s5ewJudnce4s7SiK6IXzLc8ZxJQE/VjOhzBkmlLWkhObFstKAjAvZz121PK7uFsw6PFVZOPR5/GbkFvwWxVXfrfgY5GCL9nDvwADAG6mfTLY8lnLAAAAAElFTkSuQmCC"
+                                                class="menu-icon"></div>
+                                    </div>
+                                    <div class="ivu-select-dropdown" style="display: none;">
+                                        <ul class="ivu-dropdown-menu">
+                                            <li class="ivu-dropdown-item">待处理告警</li>
+                                            <li class="ivu-dropdown-item">已处理告警</li>
+                                            <li class="ivu-dropdown-item">告警触发排名</li>
+                                            <li class="ivu-dropdown-item">语音通知</li>
+                                            <li class="ivu-dropdown-item">安全帽大数据</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div class="ivu-dropdown" style="margin-left: 20px;">
+                                    <div class="ivu-dropdown-rel">
+                                        <div class="button"><img
+                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAahJREFUOI29lE1S20AQhd+b4WdJbkBuEHIBPLMRsIpVeB9zA+cEyQ0SToD3oCp7hc0GKVxAOUHMDewtVZqXBcg/MpJxUZVezfR0f/NU81rAG+JmnPWTcaZknH3fVMumw+vbB0dT/CR4VOYkpVa6iM/8pBF4ffvgjAmtl+0HQW4ZVA1JKckcwBQADMMwjny+MyebYgDwYHFTo3iQdABcuQ8yHoAzS4CD1xq3DbO55D8ABc0Mw2eQF+8GCppZysWRzxXUfhtQepRwKWhWB7sZZ30SXxqA+rNoxN/OaatnKVdCSxh2MUlG6RWBr6saXuyzSHE6X5EuGaVXceRzSzkAmd3TR+xiUjzxHmS3qoxEXv3ktFLRLaHnJy0HAMUT7+vMLjAHgLmxDcMgyKzO6jMUZl/fmmAAYPeKFKjMcjJKJyAP65rqQsKwc9pqA9VXNubHtrBnoPlVrtcGdluVy+rWFQIwRu2q/2ph0Mzuh5UXXwPGkc9J09sEnZvc++ly/tVJOY+O+5ZykB5reJkNOoojn1cPmn96AJK7310o9AB+kjAE2e+cHA/q6v8B1yS6k4vpqBMAAAAASUVORK5CYII="
+                                                class="menu-icon"></div>
+                                    </div>
+                                    <div class="ivu-select-dropdown" style="display: none;">
+                                        <ul class="ivu-dropdown-menu">
+                                            <li class="ivu-dropdown-item">隐患整改</li>
+                                            <li class="ivu-dropdown-item">安全周报</li>
+                                            <li class="ivu-dropdown-item">奖罚单</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div class="ivu-dropdown" style="margin-left: 20px;">
+                                    <div class="ivu-dropdown-rel">
+                                        <div class="button"><img
+                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAApRJREFUOI2NVEFy2kAQ7N6lSG7mB+EJ8gNipEuonAJlcg5+gfkB5AVJXpD4bFPyDePLgv0BPYH8AG5ExW7nICQLByeZk2pnptUz0zPEPyy9d5FgTwCA8Jv+uyT7WzxfckzvHkZAuATZPnBIK5GTQbdz9V+AqXMtn9MRjP7GRFBmm0r6SbKuv5t/gC1BXhiGU8NwCvICwLJgwsjndM9/dAAYcjMqwQRcnXc7MQJaXhx7caygk/NuJxZwVYJO58vJi4CCRiWzQbcznM4XGagvEAmRJL7e3C3coNsZlkwBXdYxqh5ezx5jY4IDAMNwGmR6AMYAlqYZevsKbgF0AHwWmBFKASAEk3x8/3ZxwNBQ1RD20ogF9s+7nXi3bUS7bSMqymUfQDzont1WuVaVEhpPXNU6bK9agMapcwufhyEApM5lPg9jPFdHQJVbMQzBLMrvdObaRUnFgGwzjAbdzhBbtAhGArP03lUVBbESe8Ww8XqXhbzAD8YMbTOMfM6e/2U+EYqmdwt4MAO0sU2N/C8zIZ9y/2DYT5J1KQcA4922EdmgCEAioi+iDyCxQZHPbUziEijkVRf3wZQb2K28YUbwZP88Mc3wrUxInWuF3FwCmBRg2tim2rttIyqnTACY3j8MIX0X2Lf0Ky8uaqAQlBXBT+soaGOp2Mu2CaUgL87fnf1gCbYPWxsqgcfa03wl8QFHTMCVDWECi1YQHcBiyuQFp/OljuRMTDN8wxatQNurJCWujfwtXmNdL71uvJk/9AD1KMUg3zzR0E/zStHza7I/IKt6SyD9FLkAeFsN5Wb+0CtXqezPS8c0vXdRvc9HV88Gn/0PGFCspqViQRsAaGC3Ohp4PXuM05lrH3UeYzpz7evZY1x/+w2RUVjAbI+9OgAAAABJRU5ErkJggg=="
+                                                class="menu-icon"></div>
+                                    </div>
+                                    <div class="ivu-select-dropdown" style="display: none;">
+                                        <ul class="ivu-dropdown-menu">
+                                            <li class="ivu-dropdown-item">隐患整改</li>
+                                            <li class="ivu-dropdown-item">罚款单</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div class="ivu-dropdown" style="margin-left: 20px;">
+                                    <div class="ivu-dropdown-rel">
+                                        <div class="button"><img
+                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAABHNCSVQICAgIfAhkiAAAAhhJREFUOI2dlMFyEkEQhr8eMOYmbxDeAPIAybKXJHiCQqo84hMYnyDkpie5epLcrIrrxhMhVSlYfADjE0huHvGmVuj2ALtJqN0l+t96uuebnu6eEZYKzieHiD0hQwabAs+XZh/AjFnhsZ40fX8WxwlAcDHpYPY+C7ZGPRE5k0fzb03fnxUXx1v5P2EA22a2bX+kEg5G2w7AqfZVnQ9Eazb/APmwEjd2G9oAKakUGg6gWfen7frO2JBeHk3n8kZV3rX2vRomr+L1pIZipSLA6eBLzTn1MO0gkgozOGk/3c09EGBx5YKVAR+R1Foa9rOwoYexHY5GJUSP0mKLAK293T7Qz+q2ID1+WSkYRocA89+URChlAm9TSem22XXroNZdWt3wYlRV3Nc0WAIMhlEXSL2CWqFz33a5dSwCONEzNQdYA6Rymxyf2/WdcWyfnkevAW8tsLnnXwFXH4eTK8FCWDbCLGlEcHm5ZTf2cvm48oHx2BjaSDaY9Jv12jSJvCm+ENjMpRGPjdMa0BWkesdXDobREUA4GJXJqHEqsLXvdVv7ngDHsePZgddA5DoYRuO5k/AhsASYSGS6GmBmtpJ5rhZjs/gL32KWOIJhZJghGU8xP0Ox1Kl/iFTd+K5996UcrzrXqcjNtFX3pvfXlqc4N++J0+8upY5ZMgpbn84nFRXtwOJfTQoUXoyqaq7xLxnekmXmbH7WrPvTv8aU3v3FYLHRAAAAAElFTkSuQmCC"
+                                                class="menu-icon"></div>
+                                    </div>
+                                    <div class="ivu-select-dropdown" style="display: none;">
+                                        <ul class="ivu-dropdown-menu">
+                                            <li class="ivu-dropdown-item">施工日志</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-header" style="padding-left: 220px;">
+                <div class="header-top">
+                    <div class="header-top-left">
+                        <div class="navicon-con">
+                            <div class="ico-left"></div> <button type="button" class="ivu-btn ivu-btn-text"
+                                style="transform: rotateZ(0deg);">
+                                <!---->
+                                <!----> <span><i class="ivu-icon ivu-icon-md-menu"
+                                        style="font-size: 36px; color: rgb(173, 183, 192);"></i></span></button>
+                            <!---->
+                        </div>
+                        <div class="nav-icon"></div>
+                        <div class="header-middle-con">
+                            <div class="main-breadcrumb">
+                                <div class="setcolor ivu-breadcrumb"><span href=""><span
+                                            class="ivu-breadcrumb-item-link">项目管理</span> <span
+                                            class="ivu-breadcrumb-item-separator">&gt;&gt;</span></span><span
+                                        href="/project/employee/pagingQueryEmployee"><span
+                                            class="ivu-breadcrumb-item-link">工人管理</span> <span
+                                            class="ivu-breadcrumb-item-separator">&gt;&gt;</span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-top-right">
+                        <div style="font-size: 16px; cursor: pointer; color: rgb(45, 140, 240);"><span
+                                class="useIcon"></span>用户手册下载
+                        </div>
+                        <div style="font-size: 16px; cursor: pointer; color: rgb(45, 140, 240);"><i
+                                class="ivu-icon ivu-icon-ios-videocam" style="font-size: 16px;"></i>视频会议
+                        </div>
+                        <div style="font-size: 16px; cursor: pointer;"><a href="/map.html" target="_blank"><i
+                                    class="ivu-icon ivu-icon-md-pin"></i>项目地图
+                            </a></div>
+                        <div class="full-screen-btn-con isFullScreen">
+                            <div class="ivu-tooltip">
+                                <div class="ivu-tooltip-rel"><i class="ivu-icon ivu-icon-ios-expand"
+                                        style="font-size: 32px; color: rgb(170, 170, 170);"></i></div>
+                                <div class="ivu-tooltip-popper ivu-tooltip-dark" style="display: none;">
+                                    <div class="ivu-tooltip-content">
+                                        <div class="ivu-tooltip-arrow"></div>
+                                        <div class="ivu-tooltip-inner">全屏</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="qrCode"></div>
+                        <div class="message" style="display: none;"></div> <span class="ivu-badge" style="">
+                            <div class="messageTip"><i class="ivu-icon ivu-icon-ios-notifications"
+                                    style="font-size: 36px; color: red;"></i></div> <sup
+                                class="ivu-badge-count">23</sup>
+                        </span>
+                        <div class="user-center">
+                            <div class="user-dropdown-menu-con">
+                                <div class="user-dropdown-innercon ivu-row-flex ivu-row-flex-middle ivu-row-flex-end">
+                                    <div class="ivu-dropdown" style="width: 110px;">
+                                        <div class="ivu-dropdown-rel"><a href="javascript:void(0)"
+                                                class="main-user-name"><span class="userName">zhsz</span></a> <i
+                                                class="ivu-icon ivu-icon-md-arrow-dropdown"
+                                                style="font-size: 20px; color: deepskyblue;"></i> </div>
+                                        <!---->
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-nav" style="">
+                    <div class="nav-tags">
+                        <div class="ivu-tag ivu-tag-default ivu-tag-checked select" title="工人管理">
+                            <!----> <span class="ivu-tag-text">工人管理</span>
+                            <!---->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content" style="padding-left: 221px; padding-top: 120px;">
+                <div class="container">
+                    <div class="content-body employList">
+                        <div class="ivu-row">
+                            <div class="ivu-col ivu-col-span-5">
+                                <div><span>项目：</span>
+                                    <div id="customSelect_normal"
+                                        class="ivu-select ivu-select-single ivu-select-default" style="width: 200px;">
+                                        <div class="">
+                                            <div class="ivu-select-selection ivu-select-selection-default"><input
+                                                    id="valueChange" type="text" placeholder="请选择"
+                                                    class="ivu-select-placeholder" style="display: none;"> <span
+                                                    class="ivu-select-placeholder ivu-select-selected-value undefined">请选择</span>
+                                                <i class="ivu-select-arrow ivu-input-icon ivu-icon ivu-icon-ios-arrow-down"
+                                                    style="color: rgb(128, 134, 149);"></i></div>
+                                        </div>
+                                        <div class="ivu-select-dropdown select-dropdown"
+                                            style="padding-left: 10px; display: none;">
+                                            <div class="map_project_tree">
+                                                <ul class="map_project_tree_ul">
+                                                    <li title="中恒数字"><span class="tree_arrow_span"><i
+                                                                class="ivu-icon ivu-icon-md-arrow-dropdown"
+                                                                style="font-size: 14px; transform: rotate(-90deg); display: none;"></i></span>
+                                                        <span class="treeName" style="width: 140px;">中恒数字</span> </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div><span>是否绑定设备：</span>
+                                    <div class="ivu-select ivu-select-single ivu-select-default" style="width: 154px;">
+                                        <div tabindex="0" class="ivu-select-selection"><input type="hidden">
+                                            <div class="">
+                                                <!---->
+                                                <!----> <span class="ivu-select-placeholder">请选择</span>
+                                                <!---->
+                                                <!----> <i
+                                                    class="ivu-icon ivu-icon-ios-arrow-down ivu-select-arrow"></i></div>
+                                        </div>
+                                        <div class="ivu-select-dropdown"
+                                            style="display: none; min-width: 154px; position: absolute; will-change: top, left; transform-origin: center top; top: 94px; left: 102px;"
+                                            x-placement="bottom-start">
+                                            <ul class="ivu-select-not-found" style="display: none;">
+                                                <li>无匹配数据</li>
+                                            </ul>
+                                            <!---->
+                                            <ul class="ivu-select-dropdown-list">
+                                                <li class="ivu-select-item">全部</li>
+                                                <li class="ivu-select-item">是</li>
+                                                <li class="ivu-select-item">否</li>
+                                            </ul>
+                                            <ul class="ivu-select-loading" style="display: none;">加载中</ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ivu-col ivu-col-span-4">
+                                <div><span>班组：</span>
+                                    <div class="ivu-select ivu-select-single ivu-select-default" style="width: 154px;">
+                                        <div tabindex="0" class="ivu-select-selection"><input type="hidden">
+                                            <div class="">
+                                                <!---->
+                                                <!----> <span class="ivu-select-placeholder">请选择</span>
+                                                <!---->
+                                                <!----> <i
+                                                    class="ivu-icon ivu-icon-ios-arrow-down ivu-select-arrow"></i></div>
+                                        </div>
+                                        <div class="ivu-select-dropdown" style="display: none;">
+                                            <ul class="ivu-select-not-found">
+                                                <li>无匹配数据</li>
+                                            </ul>
+                                            <!---->
+                                            <ul class="ivu-select-dropdown-list"></ul>
+                                            <ul class="ivu-select-loading" style="display: none;">加载中</ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div><span>搜索：</span>
+                                    <div class="ivu-input-wrapper ivu-input-wrapper-default ivu-input-type"
+                                        style="width: 154px;">
+                                        <!---->
+                                        <div class="ivu-input-inner-container" style="">
+                                            <!----> <i
+                                                class="ivu-icon ivu-icon-ios-loading ivu-load-loop ivu-input-icon ivu-input-icon-validate"></i>
+                                            <input autocomplete="off" spellcheck="false" type="text"
+                                                placeholder="姓名/身份证号/手机号/设备号" class="ivu-input ivu-input-default"></div>
+                                        <!---->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ivu-col ivu-col-span-4">
+                                <div><span>所属工种：</span>
+                                    <div class="ivu-select ivu-select-single ivu-select-default" style="width: 130px;">
+                                        <div tabindex="0" class="ivu-select-selection"><input type="hidden">
+                                            <div class="">
+                                                <!---->
+                                                <!----> <span class="ivu-select-placeholder">请选择</span>
+                                                <!---->
+                                                <!----> <i
+                                                    class="ivu-icon ivu-icon-ios-arrow-down ivu-select-arrow"></i></div>
+                                        </div>
+                                        <div class="ivu-select-dropdown" style="display: none;">
+                                            <ul class="ivu-select-not-found">
+                                                <li>无匹配数据</li>
+                                            </ul>
+                                            <!---->
+                                            <ul class="ivu-select-dropdown-list"></ul>
+                                            <ul class="ivu-select-loading" style="display: none;">加载中</ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ivu-col ivu-col-span-5">
+                                <div><span>入职时间：</span>
+                                    <div class="ivu-date-picker" style="width: 180px;">
+                                        <div class="ivu-date-picker-rel">
+                                            <div
+                                                class="ivu-input-wrapper ivu-input-wrapper-default ivu-input-type ivu-date-picker-editor">
+                                                <!---->
+                                                <div class="ivu-input-inner-container" style=""><span
+                                                        class="ivu-input-suffix"><i
+                                                            class="ivu-icon ivu-icon-ios-calendar-outline"></i></span>
+                                                    <i
+                                                        class="ivu-icon ivu-icon-ios-loading ivu-load-loop ivu-input-icon ivu-input-icon-validate"></i>
+                                                    <input autocomplete="off" spellcheck="false" type="text"
+                                                        placeholder="选择入职时间"
+                                                        class="ivu-input ivu-input-default ivu-input-with-suffix"></div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div class="ivu-select-dropdown" style="display: none;">
+                                            <div>
+                                                <div class="ivu-picker-panel-body-wrapper ivu-date-picker-with-range"
+                                                    steps="">
+                                                    <!---->
+                                                    <div class="ivu-picker-panel-body ivu-picker-panel-body-date">
+                                                        <div
+                                                            class="ivu-picker-panel-content ivu-picker-panel-content-left">
+                                                            <div class="ivu-date-picker-header"><span
+                                                                    class="ivu-picker-panel-icon-btn ivu-date-picker-prev-btn ivu-date-picker-prev-btn-arrow-double"><i
+                                                                        class="ivu-icon ivu-icon-ios-arrow-back"></i></span>
+                                                                <span
+                                                                    class="ivu-picker-panel-icon-btn ivu-date-picker-prev-btn ivu-date-picker-prev-btn-arrow"><i
+                                                                        class="ivu-icon ivu-icon-ios-arrow-back"></i></span>
+                                                                <span><span
+                                                                        class="ivu-date-picker-header-label">2020年</span>
+                                                                    <span
+                                                                        class="ivu-date-picker-header-label">9月</span></span>
+                                                                <!---->
+                                                                <!---->
+                                                            </div>
+                                                            <div class="ivu-date-picker-cells">
+                                                                <div class="ivu-date-picker-cells-header"><span>
+                                                                        日
+                                                                    </span><span>
+                                                                        一
+                                                                    </span><span>
+                                                                        二
+                                                                    </span><span>
+                                                                        三
+                                                                    </span><span>
+                                                                        四
+                                                                    </span><span>
+                                                                        五
+                                                                    </span><span>
+                                                                        六
+                                                                    </span></div> <span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-prev-month"><em>30</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-prev-month"><em>31</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>1</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>2</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>3</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>4</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>5</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>6</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>7</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>8</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-today ivu-date-picker-cells-focused"><em>9</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>10</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>11</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>12</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>13</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>14</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>15</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>16</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>17</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>18</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>19</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>20</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>21</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>22</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>23</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>24</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>25</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>26</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>27</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>28</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>29</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>30</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>1</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>2</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>3</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>4</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>5</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>6</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>7</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>8</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>9</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>10</em></span>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="ivu-picker-panel-content ivu-picker-panel-content-right">
+                                                            <div class="ivu-date-picker-header">
+                                                                <!---->
+                                                                <!----> <span><span
+                                                                        class="ivu-date-picker-header-label">2020年</span>
+                                                                    <span
+                                                                        class="ivu-date-picker-header-label">10月</span></span>
+                                                                <span
+                                                                    class="ivu-picker-panel-icon-btn ivu-date-picker-next-btn ivu-date-picker-next-btn-arrow-double"><i
+                                                                        class="ivu-icon ivu-icon-ios-arrow-forward"></i></span>
+                                                                <span
+                                                                    class="ivu-picker-panel-icon-btn ivu-date-picker-next-btn ivu-date-picker-next-btn-arrow"><i
+                                                                        class="ivu-icon ivu-icon-ios-arrow-forward"></i></span>
+                                                            </div>
+                                                            <div class="ivu-date-picker-cells">
+                                                                <div class="ivu-date-picker-cells-header"><span>
+                                                                        日
+                                                                    </span><span>
+                                                                        一
+                                                                    </span><span>
+                                                                        二
+                                                                    </span><span>
+                                                                        三
+                                                                    </span><span>
+                                                                        四
+                                                                    </span><span>
+                                                                        五
+                                                                    </span><span>
+                                                                        六
+                                                                    </span></div> <span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-prev-month"><em>27</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-prev-month"><em>28</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-prev-month"><em>29</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-prev-month"><em>30</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>1</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>2</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>3</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>4</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>5</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>6</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>7</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>8</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>9</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>10</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>11</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>12</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>13</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>14</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>15</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>16</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>17</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>18</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>19</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>20</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>21</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>22</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>23</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>24</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>25</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>26</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>27</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>28</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>29</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>30</em></span><span
+                                                                    class="ivu-date-picker-cells-cell"><em>31</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>1</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>2</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>3</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>4</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>5</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>6</em></span><span
+                                                                    class="ivu-date-picker-cells-cell ivu-date-picker-cells-cell-next-month"><em>7</em></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ivu-picker-panel-content" style="display: none;">
+                                                            <!---->
+                                                        </div>
+                                                        <!---->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ivu-col ivu-col-span-5">
+                                <div style="line-height: 60px;"><button type="button"
+                                        class="button search ivu-btn ivu-btn-primary">
+                                        <!---->
+                                        <!----> <span><i class="ivu-icon ivu-icon-ios-search"
+                                                style="font-size: 16px;"></i>查询
+                                        </span></button> <button type="button"
+                                        class="button refresh ivu-btn ivu-btn-primary">
+                                        <!---->
+                                        <!----> <span><i class="ivu-icon ivu-icon-md-refresh"
+                                                style="font-size: 16px;"></i>重置
+                                        </span></button></div>
+                            </div>
+                        </div>
+                        <div class="ivu-row">
+                            <div class="ivu-col ivu-col-span-24" style="text-align: right;"><button type="button"
+                                    class="addRole ivu-btn ivu-btn-primary" color="#2e94dc">
+                                    <!---->
+                                    <!----> <span><i class="ivu-icon ivu-icon-ios-add-circle-outline"
+                                            style="font-size: 16px; position: relative; top: -1px; right: 3px;"></i>快速录入
+                                    </span></button> <button type="button" class="addRole ivu-btn ivu-btn-primary"
+                                    color="#2e94dc">
+                                    <!---->
+                                    <!----> <span><i class="ivu-icon ivu-icon-ios-add-circle-outline"
+                                            style="font-size: 16px; position: relative; top: -1px; right: 3px;"></i>手动录入
+                                    </span></button> <button type="button" class="addRole ivu-btn ivu-btn-primary"
+                                    color="#2e94dc">
+                                    <!---->
+                                    <!----> <span><i class="ivu-icon ivu-icon-ios-download-outline"
+                                            style="font-size: 17px; position: relative; top: -2px; right: 3px;"></i>导出Excel
+                                    </span></button>
+                                <!---->
+                            </div>
+                        </div>
+                        <div style="overflow-x: auto;">
+                            <div class="default ivu-table-wrapper" style="min-width: 1100px;">
+                                <div class="ivu-table ivu-table-default">
+                                    <!---->
+                                    <div class="ivu-table-header">
+                                        <table cellspacing="0" cellpadding="0" border="0" style="width: 1678px;">
+                                            <colgroup>
+                                                <col width="70">
+                                                <col width="131">
+                                                <col width="131">
+                                                <col width="140">
+                                                <col width="160">
+                                                <col width="131">
+                                                <col width="131">
+                                                <col width="131">
+                                                <col width="132">
+                                                <col width="70">
+                                                <col width="450">
+                                                <!---->
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th class="ivu-table-column-center">
+                                                        <div class="ivu-table-cell"><span class="">序号</span>
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </th>
+                                                    <th class="">
+                                                        <div class="ivu-table-cell"><span class="">照片</span>
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </th>
+                                                    <th class="">
+                                                        <div class="ivu-table-cell"><span class="">姓名</span>
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </th>
+                                                    <th class="">
+                                                        <div class="ivu-table-cell"><span class="">设备号</span>
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </th>
+                                                    <th class="">
+                                                        <div class="ivu-table-cell"><span class="">身份证号</span>
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </th>
+                                                    <th class="">
+                                                        <div class="ivu-table-cell"><span class="">项目</span>
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </th>
+                                                    <th class="">
+                                                        <div class="ivu-table-cell"><span class="">班组</span>
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </th>
+                                                    <th class="">
+                                                        <div class="ivu-table-cell"><span class="">工种</span>
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </th>
+                                                    <th class="">
+                                                        <div class="ivu-table-cell"><span class="">入职时间</span>
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </th>
+                                                    <th class="">
+                                                        <div class="ivu-table-cell"><span class="">状态</span>
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </th>
+                                                    <th class="ivu-table-column-center">
+                                                        <div class="ivu-table-cell"><span class="">操作</span>
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </th>
+                                                    <!---->
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="ivu-table-body" style="">
+                                        <table cellspacing="0" cellpadding="0" border="0" style="width: 1678px;">
+                                            <colgroup>
+                                                <col width="70">
+                                                <col width="131">
+                                                <col width="131">
+                                                <col width="140">
+                                                <col width="160">
+                                                <col width="131">
+                                                <col width="131">
+                                                <col width="131">
+                                                <col width="132">
+                                                <col width="70">
+                                                <col width="450">
+                                            </colgroup>
+                                            <tbody class="ivu-table-tbody">
+                                                <tr class="ivu-table-row table-row-odd">
+                                                    <td class="ivu-table-column-center">
+                                                        <div class="ivu-table-cell"><span>1</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <img
+                                                                src="https://igh.zolbon.com:8888/igh/static/file/employee_head_man.png"
+                                                                style="width: 30px; height: 30px;">
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>刘阳</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span></span>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>320501199608225750</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>中恒数字</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>混凝土工班组</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>质量员</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>2020-09-08</span>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>在职</span>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="ivu-table-column-center">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <div style="display: flex; justify-content: space-around;">
+                                                                <span
+                                                                    style="color: rgb(46, 147, 219); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-paper"
+                                                                        style="font-size: 16px;"></i><span>详情</span></span><span
+                                                                    style="color: rgb(78, 181, 154); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-download-outline"
+                                                                        style="font-size: 18px;"></i><span>下载二维码</span></span><span
+                                                                    style="color: rgb(204, 204, 204); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center;"><i
+                                                                        class="ivu-icon ivu-icon-ios-log-out"
+                                                                        style="font-size: 18px;"></i><span>发送语音</span></span><span
+                                                                    style="color: rgb(204, 204, 204); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center;"><i
+                                                                        class="ivu-icon ivu-icon-ios-basketball-outline"
+                                                                        style="font-size: 18px;"></i><span>轨迹</span></span><span
+                                                                    style="color: rgb(149, 46, 160); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-log-in"
+                                                                        style="font-size: 18px;"></i><span>绑定设备号</span></span><span
+                                                                    style="color: rgb(78, 181, 154); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-log-out"
+                                                                        style="font-size: 18px;"></i><span>离职</span></span>
+                                                            </div>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!---->
+                                                <tr class="ivu-table-row table-row-even">
+                                                    <td class="ivu-table-column-center">
+                                                        <div class="ivu-table-cell"><span>2</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <img
+                                                                src="https://igh.zolbon.com:8888/igh/static/file/employee_head_man.png"
+                                                                style="width: 30px; height: 30px;">
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>张军</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>359972069832035</span>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>420107198009283333</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>中恒数字</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>钢筋工班组</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>安全员</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>2020-07-03</span>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>在职</span>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="ivu-table-column-center">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <div style="display: flex; justify-content: space-around;">
+                                                                <span
+                                                                    style="color: rgb(46, 147, 219); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-paper"
+                                                                        style="font-size: 16px;"></i><span>详情</span></span><span
+                                                                    style="color: rgb(78, 181, 154); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-download-outline"
+                                                                        style="font-size: 18px;"></i><span>下载二维码</span></span><span
+                                                                    style="color: rgb(78, 181, 154); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-log-out"
+                                                                        style="font-size: 18px;"></i><span>发送语音</span></span><span
+                                                                    style="color: rgb(78, 181, 154); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-basketball-outline"
+                                                                        style="font-size: 18px;"></i><span>轨迹</span></span><span
+                                                                    style="color: rgb(78, 181, 154); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-log-out"
+                                                                        style="font-size: 18px;"></i><span>解绑设备号</span></span><span
+                                                                    style="color: rgb(78, 181, 154); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-log-out"
+                                                                        style="font-size: 18px;"></i><span>离职</span></span>
+                                                            </div>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!---->
+                                                <tr class="ivu-table-row table-row-odd">
+                                                    <td class="ivu-table-column-center">
+                                                        <div class="ivu-table-cell"><span>3</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <img
+                                                                src="https://igh.zolbon.com:8888/igh/static/file/employee_head_man.png"
+                                                                style="width: 30px; height: 30px;">
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>孟凡鹏</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>359972069831953</span>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>210521198707080070</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>中恒数字</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>钢筋工班组</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>质量员</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>2020-07-03</span>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>在职</span>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="ivu-table-column-center">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <div style="display: flex; justify-content: space-around;">
+                                                                <span
+                                                                    style="color: rgb(46, 147, 219); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-paper"
+                                                                        style="font-size: 16px;"></i><span>详情</span></span><span
+                                                                    style="color: rgb(78, 181, 154); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-download-outline"
+                                                                        style="font-size: 18px;"></i><span>下载二维码</span></span><span
+                                                                    style="color: rgb(78, 181, 154); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-log-out"
+                                                                        style="font-size: 18px;"></i><span>发送语音</span></span><span
+                                                                    style="color: rgb(78, 181, 154); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-basketball-outline"
+                                                                        style="font-size: 18px;"></i><span>轨迹</span></span><span
+                                                                    style="color: rgb(78, 181, 154); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-log-out"
+                                                                        style="font-size: 18px;"></i><span>解绑设备号</span></span><span
+                                                                    style="color: rgb(78, 181, 154); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-log-out"
+                                                                        style="font-size: 18px;"></i><span>离职</span></span>
+                                                            </div>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!---->
+                                                <tr class="ivu-table-row table-row-even">
+                                                    <td class="ivu-table-column-center">
+                                                        <div class="ivu-table-cell"><span>4</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <img
+                                                                src="https://igh.zolbon.com:8888/igh/static/file/employee_head_man.png"
+                                                                style="width: 30px; height: 30px;">
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>孟凡</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span></span>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>21052119870708007X</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>中恒数字</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>钢筋工班组</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>施工员</span>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>2020-07-03</span>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!----> <span>离职</span>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                    <td class="ivu-table-column-center">
+                                                        <div class="ivu-table-cell">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <div style="display: flex; justify-content: space-around;">
+                                                                <span
+                                                                    style="color: rgb(149, 46, 160); font-size: 13px; display: flex; margin-left: 8px; align-items: center; justify-content: center; cursor: pointer;"><i
+                                                                        class="ivu-icon ivu-icon-ios-log-in"
+                                                                        style="font-size: 18px;"></i><span>再次入职</span></span>
+                                                            </div>
+                                                            <!---->
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!---->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="ivu-table-tip" style="display: none;">
+                                        <table cellspacing="0" cellpadding="0" border="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 1678px;"><span>暂无筛选结果</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!---->
+                                    <!---->
+                                    <!---->
+                                    <!---->
+                                </div>
+                                <!----><object tabindex="-1" type="text/html" data="about:blank"
+                                    style="display: block; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; opacity: 0; z-index: -1000; pointer-events: none;"></object>
+                            </div>
+                        </div>
+                        <ul class="ivu-page" style="display: none;"><span class="ivu-page-total">共 4 条</span>
+                            <li title="上一页" class="ivu-page-prev ivu-page-disabled"><a><i
+                                        class="ivu-icon ivu-icon-ios-arrow-back"></i></a></li>
+                            <li title="1" class="ivu-page-item ivu-page-item-active"><a>1</a></li>
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                            <li title="下一页" class="ivu-page-next ivu-page-disabled"><a><i
+                                        class="ivu-icon ivu-icon-ios-arrow-forward"></i></a></li>
+                            <div class="ivu-page-options">
+                                <div class="ivu-page-options-sizer">
+                                    <div class="ivu-select ivu-select-single ivu-select-default">
+                                        <div tabindex="0" class="ivu-select-selection"><input type="hidden" value="10">
+                                            <div class="">
+                                                <!---->
+                                                <!----> <span class="ivu-select-selected-value">10 条/页</span>
+                                                <!---->
+                                                <!----> <i
+                                                    class="ivu-icon ivu-icon-ios-arrow-down ivu-select-arrow"></i></div>
+                                        </div>
+                                        <div class="ivu-select-dropdown"
+                                            style="display: none; min-width: 100px; position: absolute; will-change: top, left; transform-origin: center top; top: 5px; left: 0px;"
+                                            x-placement="bottom" x-out-of-boundaries="">
+                                            <ul class="ivu-select-not-found" style="display: none;">
+                                                <li>无匹配数据</li>
+                                            </ul>
+                                            <!---->
+                                            <ul class="ivu-select-dropdown-list">
+                                                <li class="ivu-select-item ivu-select-item-selected"
+                                                    style="text-align: center;">10 条/页</li>
+                                                <li class="ivu-select-item" style="text-align: center;">15 条/页</li>
+                                                <li class="ivu-select-item" style="text-align: center;">20 条/页</li>
+                                            </ul>
+                                            <ul class="ivu-select-loading" style="display: none;">加载中</ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!---->
+                            </div>
+                        </ul>
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                </div>
+            </div>
+            <!---->
+            <!---->
+        </div>
+    </div>
+    <script type="text/javascript" src="/static/js/manifest.bef584bd1c2d253bd161.js"></script>
+    <script type="text/javascript" src="/static/js/vendor.00cc7075c0323908c353.js"></script>
+    <script type="text/javascript" src="/static/js/index.89580d53dd2fe889025a.js"></script>
+    <div tabindex="-1" role="dialog" aria-hidden="true" class="pswp">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div> <button title="Close (Esc)"
+                        class="pswp__button pswp__button--close"></button> <button title="Share"
+                        class="pswp__button pswp__button--share"></button> <button title="Toggle fullscreen"
+                        class="pswp__button pswp__button--fs"></button> <button title="Zoom in/out"
+                        class="pswp__button pswp__button--zoom"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div> <button title="Previous (arrow left)" class="pswp__button pswp__button--arrow--left"></button>
+                <button title="Next (arrow right)" class="pswp__button pswp__button--arrow--right"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ivu-loading-bar" style="height: 2px; display: none;">
+        <div class="ivu-loading-bar-inner ivu-loading-bar-inner-color-primary" style="width: 0%; height: 2px;"></div>
+    </div>
+    <div class="xl-chrome-ext-bar" id="xl_chrome_ext_{4DB361DE-01F7-4376-B494-639E489D19ED}" style="display: none;">
+        <div class="xl-chrome-ext-bar__logo"></div>
+
+        <a id="xl_chrome_ext_download" href="javascript:;" class="xl-chrome-ext-bar__option">下载视频</a>
+        <a id="xl_chrome_ext_close" href="javascript:;" class="xl-chrome-ext-bar__close"></a>
+    </div><iframe id="blockbyte-bs-sidebar" class="notranslate" aria-hidden="true" data-pos="left"></iframe>
+    <div id="blockbyte-bs-indicator" class="blockbyte-bs-fullHeight" style="width: 1px; height: 100%; top: 0%;"></div>
+    <div class="ivu-message" style="top: 24px; z-index: 1013;"></div>
+    <div class="ivu-select-dropdown ivu-dropdown-transfer v-transfer-dom" data-transfer="true"
+        style="z-index: 1072; display: none;">
+        <ul class="ivu-dropdown-menu goaaa">
+            <li class="ivu-dropdown-item ivu-dropdown-item-divided">修改密码</li>
+            <li class="ivu-dropdown-item ivu-dropdown-item-divided" style="display: none;">U盾安全设置</li>
+            <li class="ivu-dropdown-item ivu-dropdown-item-divided">退出登录</li>
+        </ul>
+    </div>
+    <div data-transfer="true" class="classModal tabsModal v-transfer-dom">
+        <div class="ivu-modal-mask" style="z-index: 1013; display: none;"></div>
+        <div class="ivu-modal-wrap ivu-modal-hidden" style="z-index: 1013;">
+            <div class="ivu-modal" style="width: 500px; top: 25%; display: none;">
+                <div class="ivu-modal-content">
+                    <!---->
+                    <div class="ivu-modal-header">
+                        <div class="ud-edit-title"><span class="ud-edit-password checkedColor">修改U盾密码</span> <span
+                                class="ud-edit-tell">更绑U盾手机号</span></div>
+                    </div>
+                    <div class="ivu-modal-body"></div>
+                    <div class="ivu-modal-footer"><button type="button" class="ivu-btn ivu-btn-text ivu-btn-large">
+                            <!---->
+                            <!----> <span>取消</span></button> <button type="button"
+                            class="ivu-btn ivu-btn-primary ivu-btn-large">
+                            <!---->
+                            <!----> <span>确定</span></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-transfer="true" class="modalQRCode v-transfer-dom">
+        <div class="ivu-modal-mask" style="z-index: 1015; display: none;"></div>
+        <div class="ivu-modal-wrap ivu-modal-hidden" style="z-index: 1015;">
+            <div class="ivu-modal" style="width: 520px; display: none;">
+                <div class="ivu-modal-content"><a class="ivu-modal-close"><i
+                            class="ivu-icon ivu-icon-ios-close"></i></a>
+                    <!---->
+                    <div class="ivu-modal-body"><img src="/static/img/modal.8a628cf.jpg">
+                        <div><img
+                                src="data:image/png;base64,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">
+                        </div>
+                        <p><img
+                                src="data:image/png;base64,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">
+                        </p>
+                    </div>
+                    <div class="ivu-modal-footer"><button type="button" class="ivu-btn ivu-btn-text ivu-btn-large">
+                            <!---->
+                            <!----> <span>取消</span></button> <button type="button"
+                            class="ivu-btn ivu-btn-primary ivu-btn-large">
+                            <!---->
+                            <!----> <span>确定</span></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-transfer="true" class="classModal classModalMain v-transfer-dom">
+        <div class="ivu-modal-mask" style="z-index: 1016; display: none;"></div>
+        <div class="ivu-modal-wrap ivu-modal-hidden" style="z-index: 1016;">
+            <div class="ivu-modal" style="width: 520px; display: none;">
+                <div class="ivu-modal-content"><a class="ivu-modal-close"><i
+                            class="ivu-icon ivu-icon-ios-close"></i></a>
+                    <div class="ivu-modal-header">
+                        <div class="ivu-modal-header-inner">消息提示</div>
+                    </div>
+                    <div class="ivu-modal-body">
+                        <ul style="width: 100%; max-height: 400px; overflow: auto;"></ul>
+                    </div>
+                    <div class="ivu-modal-footer">
+                        <div><button type="button" class="ivu-btn ivu-btn-default">
+                                <!---->
+                                <!----> <span>取消</span></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><textarea wrap="soft" style="letter-spacing:normal;line-height:21px;padding-top:4px;padding-bottom:4px;font-family:&quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, 微软雅黑, Arial, sans-serif;font-weight:400;font-size:14px;text-rendering:auto;text-transform:none;width:100%;text-indent:0px;padding-left:7px;padding-right:7px;border-width:1px;box-sizing:border-box;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important
+"></textarea>
+    <div data-transfer="true" class="v-transfer-dom">
+        <div class="ivu-modal-mask" style="z-index: 1192; display: none;"></div>
+        <div class="ivu-modal-wrap ivu-modal-hidden" style="z-index: 1192;">
+            <div class="ivu-modal" style="width: 520px; top: 25%; display: none;">
+                <div class="ivu-modal-content"><a class="ivu-modal-close"><i
+                            class="ivu-icon ivu-icon-ios-close"></i></a>
+                    <div class="ivu-modal-header">
+                        <div class="ivu-modal-header-inner">绑定设备号</div>
+                    </div>
+                    <div class="ivu-modal-body">
+                        <div class="deviceSelect_employeeList">
+                            <div class="ivu-input-wrapper ivu-input-wrapper-default ivu-input-type"
+                                style="width: 170px;">
+                                <!---->
+                                <div class="ivu-input-inner-container" style="">
+                                    <!----> <i
+                                        class="ivu-icon ivu-icon-ios-loading ivu-load-loop ivu-input-icon ivu-input-icon-validate"></i>
+                                    <input autocomplete="off" spellcheck="false" type="text" placeholder="请选择设备号"
+                                        readonly="readonly" class="ivu-input ivu-input-default"></div>
+                                <!---->
+                            </div>
+                            <div class="deviceListBox" style="display: none;">
+                                <div class="ivu-input-wrapper ivu-input-wrapper-small ivu-input-type"
+                                    style="width: 172px; position: relative; left: -1px;">
+                                    <!---->
+                                    <div class="ivu-input-inner-container" style="">
+                                        <!----> <i
+                                            class="ivu-icon ivu-icon-ios-loading ivu-load-loop ivu-input-icon ivu-input-icon-validate"></i>
+                                        <input autocomplete="off" spellcheck="false" type="text" placeholder="输入设备号进行查询"
+                                            class="ivu-input ivu-input-small"></div>
+                                    <!---->
+                                </div>
+                                <ul class="devoceImeiList">
+                                    <li style="text-align: center;">暂无设备</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ivu-modal-footer"><button type="button" class="ivu-btn ivu-btn-text ivu-btn-large">
+                            <!---->
+                            <!----> <span>取消</span></button> <button type="button"
+                            class="ivu-btn ivu-btn-primary ivu-btn-large">
+                            <!---->
+                            <!----> <span>确定</span></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-transfer="true" class="sendVoiceModal classModal v-transfer-dom">
+        <div class="ivu-modal-mask" style="z-index: 1193; display: none;"></div>
+        <div class="ivu-modal-wrap ivu-modal-hidden" style="z-index: 1193;">
+            <div class="ivu-modal" style="width: 400px; display: none;">
+                <div class="ivu-modal-content"><a class="ivu-modal-close"><i
+                            class="ivu-icon ivu-icon-ios-close"></i></a>
+                    <div class="ivu-modal-header">
+                        <div class="ivu-modal-header-inner">发送确认</div>
+                    </div>
+                    <div class="ivu-modal-body"></div>
+                    <div class="ivu-modal-footer"><button type="button" class="ivu-btn ivu-btn-text ivu-btn-large">
+                            <!---->
+                            <!----> <span>取消</span></button> <button type="button"
+                            class="ivu-btn ivu-btn-primary ivu-btn-large">
+                            <!---->
+                            <!----> <span>确定</span></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-transfer="true" class="v-transfer-dom">
+        <div class="ivu-modal-mask" style="z-index: 1194; display: none;"></div>
+        <div class="ivu-modal-wrap ivu-modal-hidden" style="z-index: 1194;">
+            <div class="ivu-modal" style="width: 520px; top: 25%; display: none;">
+                <div class="ivu-modal-content"><a class="ivu-modal-close"><i
+                            class="ivu-icon ivu-icon-ios-close"></i></a>
+                    <div class="ivu-modal-header">
+                        <div class="ivu-modal-header-inner">员工离职</div>
+                    </div>
+                    <div class="ivu-modal-body">
+                        <div style="font-size: 16px; margin-bottom: 20px; display: inline-block;"><span>离职评分：</span>
+                            <br> <input type="number" min="1" max="100" style="width: 100px;"></div>
+                        <div style="font-size: 16px;"><span>离职评语：</span> <br>
+                            <div class="ivu-input-wrapper ivu-input-wrapper-default ivu-input-type" style="width: 80%;">
+                                <textarea wrap="soft" autocomplete="off" spellcheck="false" placeholder="离职评语" rows="2"
+                                    class="ivu-input"
+                                    style="height: 73px; min-height: 73px; max-height: 430px; overflow-y: hidden;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ivu-modal-footer"><button type="button" class="ivu-btn ivu-btn-text ivu-btn-large">
+                            <!---->
+                            <!----> <span>取消</span></button> <button type="button"
+                            class="ivu-btn ivu-btn-primary ivu-btn-large">
+                            <!---->
+                            <!----> <span>确定</span></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-transfer="true" class="classModal v-transfer-dom">
+        <div class="ivu-modal-mask" style="z-index: 1195; display: none;"></div>
+        <div class="ivu-modal-wrap ivu-modal-hidden" style="z-index: 1195;">
+            <div class="ivu-modal" style="width: 520px; top: 15%; display: none;">
+                <div class="ivu-modal-content"><a class="ivu-modal-close"><i
+                            class="ivu-icon ivu-icon-ios-close"></i></a>
+                    <div class="ivu-modal-header">
+                        <div class="ivu-modal-header-inner">批量导入银行卡</div>
+                    </div>
+                    <div class="ivu-modal-body">
+                        <div class="downLoadBankCard">
+                            <p class="bank-card-modal-title">工人银行模板下载</p> <button type="button"
+                                class="ivu-btn ivu-btn-primary">
+                                <!---->
+                                <!----> <span>下载</span></button>
+                        </div>
+                        <div class="uploadBankCard">
+                            <p>工人银行卡导入</p>
+                            <div class="uploadBox"><input type="file" id="uploadFile" class="button_ipunt">
+                                <div class="button_box">导入</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<div style="all: initial;">
+    <div></div>
+</div>
+
+</html>

@@ -1,0 +1,18 @@
+.input-card div {
+    height: 100px;
+    width: 20px;
+    top: 5px;
+    
+  }
+
+.amap-marker-label{
+    border: 0;
+    background-color: transparent;
+}  
+
+.info{
+    position: relative;
+    top: 0;
+    right: 0;
+    min-width: 0;
+}

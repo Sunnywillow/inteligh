@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>txt</title>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/vector.js"></script>
+
+</head>
+
+<body>
+
+	<div id="container">
+		<div id="output">
+			<div class="containerT">
+				<h1>用户登录</h1>
+				<form class="form" id="entry_form">
+					<input type="text" placeholder="用户名" id="entry_name" value="admin">
+					<input type="password" placeholder="密码" id="entry_password">
+					<p id="error_box"><br></p>
+					
+					<button type="button" id="entry_btn" onclick="fnLogin()">登录</button>
+					<div id="prompt" class="prompt"></div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(function () {
+			Victor("container", "output");   //登录背景函数
+			$("#entry_name").focus();
+			$(document).keydown(function (event) {
+				if (event.keyCode == 13) {
+					$("#entry_btn").click();
+				}
+			});
+		});
+
+		var list =
+		{
+			username: 'admin',
+			password: '123456'
+		}
+
+		function fnLogin() {
+			var oUname = $("#entry_name").val();
+
+
+			var oUpass = document.getElementById("entry_password");
+			var oError = document.getElementById("error_box");
+			if (oUname.length > 20 || oUname.length < 4) {
+				oError.innerHTML = "用户名请输入6-20位字符"
+				return;
+			} else if ((oUname.charCodeAt(0) >= 48) && (oUname.charCodeAt(0) <= 57)) {
+				oError.innerHTML = "首字符必须为字母";
+				return;
+			} else for (var i = 0; i < oUname.charCodeAt(i); i++) {
+
+				if ((oUname.charCodeAt(i) < 48) || (oUname.charCodeAt(i) > 57) && (oUname.charCodeAt(i) < 97) || (oUname.charCodeAt(i) > 122)) {
+
+					oError.innerHTML = "必须为字母跟数字组成";
+
+					return;
+
+				}
+
+			}
+
+			if (oUpass.value.length > 20 || oUpass.value.length < 4) {
+
+				oError.innerHTML = "密码请输入6-20位字符"
+
+				isError = false;
+
+				return;
+
+			}
+			
+			if (oUname ==
+			 list.username)
+
+			window.location.href='index.html';
+			window.alert("登录成功")
+			
+		}
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+
+</html>
